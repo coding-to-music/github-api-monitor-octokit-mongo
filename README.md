@@ -9,7 +9,8 @@ From / By https://github.com/Roy-Gal-Git/GitHubMonitorServer
 ## Environment variables:
 
 ```java
-
+      owner: process.env.OWNER,
+      repo: process.env.REPO,
 ```
 
 ## GitHub
