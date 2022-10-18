@@ -1,11 +1,13 @@
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 require("dotenv").config({ path: __dirname + "/.env" });
 app = express();
 
-app.use(cors({
-  origin: '*'
-}));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 require("./startup/db")();
 require("./startup/routes")(app);

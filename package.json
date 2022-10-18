@@ -1,8 +1,8 @@
 {
   "name": "github-api-monitor-octokit-mongo",
   "version": "1.0.0",
-  "description": "By: Roy Gal",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git add . && git commit -m Build && git push"
@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/Roy-Gal-Git/GitHubMonitorServer/issues"
   },
-  "homepage": "https://github.com/Roy-Gal-Git/GitHubMonitorServer#readme"
+  "homepage": "https://github.com/Roy-Gal-Git/GitHubMonitorServer#readme",
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "node-cron": "^3.0.0",
+    "winston": "^3.5.0"
+  }
 }
