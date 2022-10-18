@@ -1,0 +1,21 @@
+{
+  "name": "github-api-monitor-octokit-mongo",
+  "version": "1.0.0",
+  "description": "By: Roy Gal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git add . && git commit -m Build && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roy-Gal-Git/GitHubMonitorServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roy-Gal-Git/GitHubMonitorServer/issues"
+  },
+  "homepage": "https://github.com/Roy-Gal-Git/GitHubMonitorServer#readme"
+}
