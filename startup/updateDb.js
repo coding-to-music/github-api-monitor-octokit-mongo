@@ -45,7 +45,7 @@ const updateDB = async (pullRequests) => {
     existingPullRequest = await Pull.findOne({ pull_request_id });
 
     if (existingPullRequest) {
-      console.timestamp(
+      console.log(
         "updateDB: existingPullRequest pull_request_id",
         pull_request_id
       );
@@ -81,10 +81,7 @@ const updateDB = async (pullRequests) => {
         new: true,
       });
     } else {
-      console.timestamp(
-        "updateDB: new PullRequest pull_request_id",
-        pull_request_id
-      );
+      console.log("updateDB: new PullRequest pull_request_id", pull_request_id);
 
       pull = new Pull({
         title: pullReq.title,
