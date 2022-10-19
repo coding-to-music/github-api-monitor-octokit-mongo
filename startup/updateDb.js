@@ -2,7 +2,12 @@ const cron = require("node-cron");
 const { Octokit } = require("@octokit/rest");
 const mongoose = require("mongoose");
 const { Pull } = require("../models/pulls");
-const octokit = new Octokit({ baseUrl: "https://api.github.com" });
+// const octokit = new Octokit({ baseUrl: "https://api.github.com" });
+
+const octokit = new Octokit({
+  baseUrl: "https://api.github.com",
+  auth: process.env.OCTOKIT_TOKEN,
+});
 
 // Call the GitHub API and get the pull requests
 const getPullRequests = async () => {
@@ -40,6 +45,10 @@ const updateDB = async (pullRequests) => {
     existingPullRequest = await Pull.findOne({ pull_request_id });
 
     if (existingPullRequest) {
+      console.timestamp(
+        "updateDB: existingPullRequest pull_request_id",
+        pull_request_id
+      );
       pull = new Pull(
         {
           title: pullReq.title,
@@ -72,6 +81,11 @@ const updateDB = async (pullRequests) => {
         new: true,
       });
     } else {
+      console.timestamp(
+        "updateDB: new PullRequest pull_request_id",
+        pull_request_id
+      );
+
       pull = new Pull({
         title: pullReq.title,
         html_url: pullReq.html_url,

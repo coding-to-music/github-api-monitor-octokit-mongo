@@ -13,7 +13,7 @@ class Pulls extends Component {
 
   async componentDidMount() {
     const { data: pulls } = await getPulls();
-    console.log(pulls);
+    console.log("pulls ", pulls);
     this.setState({ pulls });
   }
 
