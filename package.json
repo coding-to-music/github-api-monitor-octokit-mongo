@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Roy-Gal-Git/GitHubMonitorServer#readme",
   "dependencies": {
     "@octokit/rest": "^18.12.0",
+    "console-stamp": "^3.0.6",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",

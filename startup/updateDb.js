@@ -1,3 +1,9 @@
+// add timestamps in front of log messages
+require("console-stamp")(console, {
+  format: ":date().blue.green.underline :label(7)",
+});
+// format: "[yyyy/mm/dd HH:MM:ss.l]",
+
 const cron = require("node-cron");
 const { Octokit } = require("@octokit/rest");
 const mongoose = require("mongoose");
@@ -45,11 +51,22 @@ const updateDB = async (pullRequests) => {
     existingPullRequest = await Pull.findOne({ pull_request_id });
 
     if (existingPullRequest) {
+      // const DateTime = new Date();
+      // console.log(DateTime);
+      // console.log(new Date().toString("yyyy/mm/dd"));
+      // console.log(new Date().toString("hh:mm:ss"));
+      // console.log(new Date().toString("yyyy/mm/dd hh:mm:ss"));
+      // console.log(
+      //   "%s updateDB: existingPullRequest pull_request_id %s",
+      //   new Date().toString("YYYY:MM:DD HH:MM:SS"),
+      //   pull_request_id
+      // );
+
       console.log(
-        "%s updateDB: existingPullRequest pull_request_id %s",
-        new Date().toString("YYYY:MM:DD HH:MM:SS"),
+        "updateDB: existingPullRequest pull_request_id %s",
         pull_request_id
       );
+
       pull = new Pull(
         {
           title: pullReq.title,
@@ -121,8 +138,10 @@ const updateDB = async (pullRequests) => {
 module.exports = function () {
   cron.schedule("*/2 * * * *", async () => {
     try {
+      console.log("cron.schedule: about to call getPullRequests");
       pullRequests = await getPullRequests();
       updateDB(pullRequests);
+      console.log("cron.schedule: Database is updated");
     } catch (error) {
       console.log(error.message);
     }
