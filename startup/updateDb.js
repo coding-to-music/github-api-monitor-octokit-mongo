@@ -51,17 +51,6 @@ const updateDB = async (pullRequests) => {
     existingPullRequest = await Pull.findOne({ pull_request_id });
 
     if (existingPullRequest) {
-      // const DateTime = new Date();
-      // console.log(DateTime);
-      // console.log(new Date().toString("yyyy/mm/dd"));
-      // console.log(new Date().toString("hh:mm:ss"));
-      // console.log(new Date().toString("yyyy/mm/dd hh:mm:ss"));
-      // console.log(
-      //   "%s updateDB: existingPullRequest pull_request_id %s",
-      //   new Date().toString("YYYY:MM:DD HH:MM:SS"),
-      //   pull_request_id
-      // );
-
       console.log(
         "updateDB: existingPullRequest pull_request_id %s",
         pull_request_id
