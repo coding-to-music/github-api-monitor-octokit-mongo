@@ -46,7 +46,8 @@ const updateDB = async (pullRequests) => {
 
     if (existingPullRequest) {
       console.log(
-        "updateDB: existingPullRequest pull_request_id",
+        "%s updateDB: existingPullRequest pull_request_id %s",
+        new Date().toString("YYYY:MM:DD HH:MM:SS"),
         pull_request_id
       );
       pull = new Pull(
@@ -81,7 +82,11 @@ const updateDB = async (pullRequests) => {
         new: true,
       });
     } else {
-      console.log("updateDB: new PullRequest pull_request_id", pull_request_id);
+      console.log(
+        "%s updateDB: new PullRequest pull_request_id %s",
+        new Date().toString("YYYY:MM:DD HH:MM:SS"),
+        pull_request_id
+      );
 
       pull = new Pull({
         title: pullReq.title,
