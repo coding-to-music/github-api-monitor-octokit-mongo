@@ -89,8 +89,7 @@ const updateDB = async (pullRequests) => {
       });
     } else {
       console.log(
-        "%s updateDB: new PullRequest pull_request_id %s",
-        new Date().toString("YYYY:MM:DD HH:MM:SS"),
+        "updateDB: new PullRequest pull_request_id %s",
         pull_request_id
       );
 
