@@ -46,3 +46,7 @@ By: Roy Gal
 # Info:
 
 The server updates the DB every 2 minutes.
+
+http://localhost:3000 is the React UI
+
+http://localhost:3000/api/pull-requests (does not return any data when calling the database)
